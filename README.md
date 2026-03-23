@@ -38,3 +38,7 @@ Simulated a Credential Access (T1110) attack via SMB using a scripted bash loop 
 Detection: Correlated 20+ failed login attempts into a High-Severity (Level 10) Alert.
 
 Mitigation: The attack successfully triggered a local Windows security policy, resulting in an Account Lockout, verified by Rule 60115 in the SIEM.
+## Deployment
+1. Update `ossec.conf` with your Wazuh manager IP.
+2. Run `deploy-agent.ps1` as Administrator.
+3. Verify agent is running with `Get-Service WazuhSvc`.
