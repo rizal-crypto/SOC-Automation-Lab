@@ -35,6 +35,9 @@ Proof of Concept: Captured unauthorized process execution through the SIEM dashb
 Configured real-time monitoring of sensitive system directories.
 
 Detection: Triggered Level 7 alerts upon unauthorized modification of protected files.
+I configured Wazuh to monitor real-time modifications to sensitive system directories. This alert confirms a "Rule 550" trigger after an unauthorized file change.
+
+![FIM Alert](screenshots/FIM20%alerts.png)
 
 Impact: Ensures data integrity and detects potential ransomware or persistent backdoors.
 
