@@ -16,12 +16,18 @@ Key Phases & Deliverables
 1. Vulnerability Management & Patching
 Conducted automated scans of the endpoint against the National Vulnerability Database (NVD).
 
+I utilized Wazuh's native vulnerability detector to identify outdated software and OS vulnerabilities on the Windows endpoint.
+![Vulnerability Scan](screenshots/Vulnerability%20Scan.png)
+
 Findings: Identified 7 high-severity vulnerabilities in Microsoft Teams (CVE-2025-53783).
 
 Action: Mapped vulnerabilities to internal risk scores to prioritize remediation.
 
 2. Advanced Telemetry (Sysmon Integration)
 To bypass the limitations of standard Windows logs, I integrated Sysmon to gain deep visibility into process creation (Event ID 1) and network connections.
+
+By integrating Microsoft Sysmon, I captured granular process-level data, mapping system behavior to the MITRE ATT&CK framework.
+![Sysmon Telemetry](screenshots/sysmon.png)
 
 Proof of Concept: Captured unauthorized process execution through the SIEM dashboard, enabling granular forensic investigation.
 
@@ -34,6 +40,9 @@ Impact: Ensures data integrity and detects potential ransomware or persistent ba
 
 4. Incident Simulation: Brute Force & Account Lockout
 Simulated a Credential Access (T1110) attack via SMB using a scripted bash loop from the Ubuntu manager.
+
+A simulated brute-force attack was executed using a custom script, successfully triggering a Level 10 alert and an automated account lockout.
+![Brute Force Alert](screenshots/Bruteforce%20alert.png)
 
 Detection: Correlated 20+ failed login attempts into a High-Severity (Level 10) Alert.
 
